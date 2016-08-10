@@ -1,4 +1,5 @@
-<h2>Create new category</h2>
+<h2>Edit existing category</h2>
+
 <% if @category.errors.any? %>
 <h4>The following errors prevented category creation</h4>
     <ul>
@@ -20,5 +21,4 @@
         <%= f.submit %>
     </p>
 <% end %>
-
 <%= link_to "Back", categories_path %>
