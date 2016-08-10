@@ -1,5 +1,12 @@
 <h2>Create new category</h2>
-
+<% if @category.errors.any? %>
+<h4>The following errors prevented category creation</h4>
+    <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
 <%= form_for @category do |f| %>
     <p>
         <%= f.label :name %>

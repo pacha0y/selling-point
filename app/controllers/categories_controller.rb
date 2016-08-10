@@ -7,8 +7,16 @@ class CategoriesController < ApplicationController
     def create
         # render plain:params[:category].inspect
         @category = Category.new(category_params)
-        @category.save
-        redirect_to categories_show(@category)
+        if @category.save
+            flash[:notice] = "Category was successfully created"
+            redirect_to category_path(@category)
+        else
+            render 'new'
+        end
+    end
+    
+    def show
+       @category = Category.find(params[:id]) 
     end
     
     private
