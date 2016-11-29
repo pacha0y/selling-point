@@ -1,6 +1,17 @@
-<h3>Showing the selected category</h3>
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><%= @category.name %></h2>
+            </div>
+            <div class="panel-body">
+                <p>Description: <%= @category.description %></p>
+                <hr>
+                <%= link_to "Back", categories_path, class: "btn btn-sm btn-default" %>
+                <%= link_to "Edit", edit_category_path, class: "btn btn-sm btn-primary" %>
+                <%= link_to "Remove", category_path(@category), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>Name: <%= @category.name %></p>
-<p>Description: <%= @category.description %></p>
-<%= link_to "Edit", edit_category_path %>
-<%= link_to "Back", categories_path %>
